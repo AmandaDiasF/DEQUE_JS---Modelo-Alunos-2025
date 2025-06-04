@@ -11,7 +11,17 @@ class LinkedList{
 
     addFirst(novoDado){
         const novoNo = new No(novoDado);
-        // continuar
+        if(this.#head==null)
+        {
+            this.#tail = novoNo;
+        }else{
+            novoNo.proximo = this.#head;
+            this.#head.anterior = novoNo;
+        }
+        this.#head = novoNo;
+        this.qtd++;
+        return true;
+
     }
 
     addLast(novoDado){
@@ -41,7 +51,13 @@ class LinkedList{
 
     removeLast(){
         const dadoRemovido = this.#tail.dado;
-         // continuar
+        this.#tail = this.#tail.anterior;
+        if(this.#tail!==null)
+            this.#tail.proximo = null;
+        else
+            this.#head = null;
+        this.#qtd--;
+        return dadoRemovido;
     }
     
     getLast(){

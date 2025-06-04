@@ -19,15 +19,22 @@ function leiaDadosTarefa() {
 }
 //--------------------------------------------------------------------------------------------
  function adicionarElementoInicio() {
-    const novaTarefa = leiaDadosTarefa();
-    minhaLista.addFirst(novaTarefa);
+  const novaTarefa = leiaDadosTarefa(); 
+  if(novaTarefa!=null){ 
+  minhaLista.addFirst(novaTarefa);
     console.log(minhaLista.toString());
     limpaInputs();
-    atualizarLista();
+    atualizarLista(); 
+  }
+    // implemente
  }
  //------------------------------------------------------------------------------------------------------
   function adicionarElementoFinal() {
-    const novaTarefa = leiaDadosTarefa();  
+    const novaTarefa = leiaDadosTarefa(); 
+    minhaLista.addLast(novaTarefa);
+    console.log(minhaLista.toString());
+    limpaInputs();
+    atualizarLista(); 
     // implemente
   }
   //--------------------------------------------------------------------------------------------
